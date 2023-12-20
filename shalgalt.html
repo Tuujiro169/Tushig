@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tuujiis button pro</title>
+<style>
+    .button-style {
+        padding: 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s, border-radius 0.3s;
+    }
+
+.color-1 { background-color: #28a745; } 
+.color-2 { background-color: #dc3545; } 
+.color-3 { background-color: #ffc107; } 
+.color-4 { background-color: #17a2b8; } 
+
+.shape-1 { border-radius: 0%; }    
+.shape-2 { border-radius: 50%; }   
+.shape-3 { border-radius: 15%; }   
+.shape-4 { border-radius: 0px 50px; } 
+
+</style>
+</head>
+<body>
+<center> <button id="changeStyleButton" class="button-style">namaig dar</button> </center>
+ 
+<center> <p>i am tuujii ITW </p> </center>
+<script>
+
+const colors = ['color-1', 'color-2', 'color-3', 'color-4'];
+const shapes = ['shape-1', 'shape-2', 'shape-3', 'shape-4',];
+let currentIndex = 0;
+
+document.getElementById('changeStyleButton').addEventListener('click', function() {
+    this.classList.remove(colors[currentIndex], shapes[currentIndex]);
+
+
+    currentIndex = (currentIndex + 1) % colors.length;
+
+
+    this.classList.add(colors[currentIndex], shapes[currentIndex]);
+});
+</script>
+
+</body>
+</html>
